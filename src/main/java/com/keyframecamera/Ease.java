@@ -11,7 +11,7 @@ public class Ease {
         double nextYaw = nextKeyframe.getYaw();
 
         double yawDiff = Keyframe.radiansToJau(nextYaw - currentYaw);
-        if (Math.abs(yawDiff) > 1024) {
+        if (Math.abs(yawDiff) > 8192) {
             if (yawDiff > 0) {
                 currentYaw += 2 * Math.PI;
             } else {

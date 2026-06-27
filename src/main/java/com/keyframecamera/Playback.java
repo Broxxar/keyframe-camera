@@ -192,7 +192,7 @@ public class Playback
 			client.setCameraFocalPointY((float)keyframe.getFocalY());
 			client.setCameraFocalPointZ((float)finalFocalZ);
 			client.setCameraPitchTarget(Keyframe.radiansToJau(keyframe.getPitch()));
-			client.setCameraYawTarget(Keyframe.radiansToJau(keyframe.getYaw()) % 2047);
+			client.setCameraYawTarget(Keyframe.radiansToJau(keyframe.getYaw()) % 16383);
 			client.runScript(ScriptID.CAMERA_DO_ZOOM, keyframe.getScale(), keyframe.getScale());
 		});
 	}

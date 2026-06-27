@@ -27,11 +27,11 @@ public class Keyframe
 		this.ease = ease;
 	}
 
-	private static final double RADIANS_TO_JAU_FACTOR = 2048.0 / (2 * Math.PI);
+	private static final double RADIANS_TO_JAU14_FACTOR = 16384.0 / (2 * Math.PI);
 
 	public static int radiansToJau(double radians)
 	{
-		return (int) Math.round(radians * RADIANS_TO_JAU_FACTOR) % 2048;
+		return (int) Math.round(radians * RADIANS_TO_JAU14_FACTOR) % 16384;
 	}
 
 	@Override
