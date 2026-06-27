@@ -188,9 +188,9 @@ public class Playback
 		final double finalFocalZ = focalZ;
 
 		clientThread.invoke(() -> {
-			client.setCameraFocalPointX(finalFocalX);
-			client.setCameraFocalPointY(keyframe.getFocalY());
-			client.setCameraFocalPointZ(finalFocalZ);
+			client.setCameraFocalPointX((float)finalFocalX);
+			client.setCameraFocalPointY((float)keyframe.getFocalY());
+			client.setCameraFocalPointZ((float)finalFocalZ);
 			client.setCameraPitchTarget(Keyframe.radiansToJau(keyframe.getPitch()));
 			client.setCameraYawTarget(Keyframe.radiansToJau(keyframe.getYaw()) % 2047);
 			client.runScript(ScriptID.CAMERA_DO_ZOOM, keyframe.getScale(), keyframe.getScale());
